@@ -6,9 +6,9 @@
  * 空间复杂度 O(log2n)~O(n)
  */
 
-require_once __DIR__ . '/../uniqueRandom.php';
-require_once __DIR__ . '/../random.php';
-require_once __DIR__ . '/../insertSort/insertSort.php';
+require_once dirname(__FILE__) . '/../uniqueRandom.php';
+require_once dirname(__FILE__) . '/../random.php';
+require_once dirname(__FILE__) . '/../insertionSort/insertionSort.php';
 
 function quickSort(&$arr)
 {
@@ -139,3 +139,15 @@ qSortV2($arr2, 0, count($arr2) - 1);
 $end = microtime(true);
 $used = $end - $start;
 echo "qSortV2 used $used s" . PHP_EOL;
+
+//教科书
+function quick_sort_swap(&$array, $start, $end) {
+
+}
+
+$arr3 = randomArr(1, 1000000, 5000, false, false);
+$start = microtime(true);
+quick_sort_swap($arr3, 0, count($arr3) - 1);
+$end = microtime(true);
+$used = $end - $start;
+echo "quick_sort_swap used $used s" . PHP_EOL;
