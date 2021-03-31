@@ -1,6 +1,12 @@
 <?php
 
-function getCheckRes(string $str, int $len)
+/**
+ * - （必答）邀请码检测
+ * @param string $str  需要测的验证码
+ * @param int $len    验证码的长度
+ * @return bool
+ */
+function getCheckRes(string $str, int $len) :bool
 {
     if (strlen($str) != $len) {
         return false;
@@ -10,6 +16,7 @@ function getCheckRes(string $str, int $len)
         $get_info = preg_match('/[a-z0-9]+$/', $str);
 
         if ($get_info) {
+            //翻转字符串
             $str = strrev($str);
 
             $sum = 0;

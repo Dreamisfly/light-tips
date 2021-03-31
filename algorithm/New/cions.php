@@ -1,6 +1,11 @@
 <?php
 
-function getCions($n, $m)
+/**（必答）游戏币组合
+ * @param int $n
+ * @param int $m
+ * @return array
+ */
+function getCions(int $n, int $m) :array
 {
     $res = [];
 

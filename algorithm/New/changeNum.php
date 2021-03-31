@@ -1,7 +1,9 @@
 <?php
+/**（选答）有趣的两位数
+ * @return array
+ */
 
-
-function change()
+function change() :array
 {
     $res = array();
     for ($a = 11; $a < 100; $a++) {
@@ -13,6 +15,7 @@ function change()
         } else {
             continue;
         }
+
         for ($b = $c ; $b < 100; $b++) {
             //不要两个两位数相同
             if($b == $a){
@@ -28,7 +31,7 @@ function change()
                 continue;
             }
 
-
+            // b是a翻转后的整数倍且翻转b是a的整数倍
             if ($b / $c == $d / $a && $b % $c == 0 && $d % $a == 0 ) {
                 array_push($res, "$a" . '_' . "$b");
             }
